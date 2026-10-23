@@ -1,0 +1,40 @@
+<Project>
+
+	<!-- Language and framework: every project targets .NET 10 unless it overrides TargetFramework. -->
+	<PropertyGroup>
+		<TargetFramework>net10.0</TargetFramework>
+		<LangVersion>latest</LangVersion>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+	</PropertyGroup>
+
+	<!-- Quality gates: a warning is a build failure, and style rules from .editorconfig run in the build. -->
+	<PropertyGroup>
+		<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+		<AnalysisLevel>latest</AnalysisLevel>
+		<EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+		<Deterministic>true</Deterministic>
+	</PropertyGroup>
+
+	<!-- Vulnerability audit of every package, direct and transitive. Advisories warn but do not break the build. -->
+	<PropertyGroup>
+		<NuGetAudit>true</NuGetAudit>
+		<NuGetAuditMode>all</NuGetAuditMode>
+		<NuGetAuditLevel>moderate</NuGetAuditLevel>
+		<WarningsNotAsErrors>$(WarningsNotAsErrors);NU1901;NU1902;NU1903;NU1904</WarningsNotAsErrors>
+	</PropertyGroup>
+
+	<!-- Identity: the assembly name and root namespace always equal the project file name. -->
+	<PropertyGroup>
+		<AssemblyName>$(MSBuildProjectName)</AssemblyName>
+		<RootNamespace>$(MSBuildProjectName)</RootNamespace>
+		<Company>Whatsaaaa</Company>
+		<Product>Whatsaaaa BuildingBlocks</Product>
+		<Copyright>Copyright (c) 2026 Whatsaaaa</Copyright>
+	</PropertyGroup>
+
+	<!-- Nothing is packed unless src/Directory.Build.props says so. -->
+	<PropertyGroup>
+		<IsPackable>false</IsPackable>
+	</PropertyGroup>
+</Project>
