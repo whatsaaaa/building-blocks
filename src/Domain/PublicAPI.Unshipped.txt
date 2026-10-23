@@ -1,1 +1,53 @@
 #nullable enable
+override Whatsaaaa.BuildingBlocks.Domain.Results.Error.Equals(object? obj) -> bool
+override Whatsaaaa.BuildingBlocks.Domain.Results.Error.GetHashCode() -> int
+override Whatsaaaa.BuildingBlocks.Domain.Results.Error.ToString() -> string!
+override Whatsaaaa.BuildingBlocks.Domain.Results.Unit.GetHashCode() -> int
+static Whatsaaaa.BuildingBlocks.Domain.Results.Error.Conflict(string! code, string! message) -> Whatsaaaa.BuildingBlocks.Domain.Results.Error!
+static Whatsaaaa.BuildingBlocks.Domain.Results.Error.Forbidden(string! code, string! message) -> Whatsaaaa.BuildingBlocks.Domain.Results.Error!
+static Whatsaaaa.BuildingBlocks.Domain.Results.Error.NotFound(string! code, string! message) -> Whatsaaaa.BuildingBlocks.Domain.Results.Error!
+static Whatsaaaa.BuildingBlocks.Domain.Results.Error.operator !=(Whatsaaaa.BuildingBlocks.Domain.Results.Error? left, Whatsaaaa.BuildingBlocks.Domain.Results.Error? right) -> bool
+static Whatsaaaa.BuildingBlocks.Domain.Results.Error.operator ==(Whatsaaaa.BuildingBlocks.Domain.Results.Error? left, Whatsaaaa.BuildingBlocks.Domain.Results.Error? right) -> bool
+static Whatsaaaa.BuildingBlocks.Domain.Results.Error.Unexpected(string! code, string! message) -> Whatsaaaa.BuildingBlocks.Domain.Results.Error!
+static Whatsaaaa.BuildingBlocks.Domain.Results.Error.Validation(string! code, string! message) -> Whatsaaaa.BuildingBlocks.Domain.Results.Error!
+static Whatsaaaa.BuildingBlocks.Domain.Results.Result.Failure(Whatsaaaa.BuildingBlocks.Domain.Results.Error! error) -> Whatsaaaa.BuildingBlocks.Domain.Results.Result!
+static Whatsaaaa.BuildingBlocks.Domain.Results.Result.Failure<TValue>(Whatsaaaa.BuildingBlocks.Domain.Results.Error! error) -> Whatsaaaa.BuildingBlocks.Domain.Results.Result<TValue>!
+static Whatsaaaa.BuildingBlocks.Domain.Results.Result.implicit operator Whatsaaaa.BuildingBlocks.Domain.Results.Result!(Whatsaaaa.BuildingBlocks.Domain.Results.Error! error) -> Whatsaaaa.BuildingBlocks.Domain.Results.Result!
+static Whatsaaaa.BuildingBlocks.Domain.Results.Result.Success() -> Whatsaaaa.BuildingBlocks.Domain.Results.Result!
+static Whatsaaaa.BuildingBlocks.Domain.Results.Result.Success<TValue>(TValue value) -> Whatsaaaa.BuildingBlocks.Domain.Results.Result<TValue>!
+static Whatsaaaa.BuildingBlocks.Domain.Results.Result<TValue>.implicit operator Whatsaaaa.BuildingBlocks.Domain.Results.Result<TValue>!(TValue value) -> Whatsaaaa.BuildingBlocks.Domain.Results.Result<TValue>!
+static Whatsaaaa.BuildingBlocks.Domain.Results.Result<TValue>.implicit operator Whatsaaaa.BuildingBlocks.Domain.Results.Result<TValue>!(Whatsaaaa.BuildingBlocks.Domain.Results.Error! error) -> Whatsaaaa.BuildingBlocks.Domain.Results.Result<TValue>!
+static Whatsaaaa.BuildingBlocks.Domain.Results.Unit.operator !=(Whatsaaaa.BuildingBlocks.Domain.Results.Unit left, Whatsaaaa.BuildingBlocks.Domain.Results.Unit right) -> bool
+static Whatsaaaa.BuildingBlocks.Domain.Results.Unit.operator ==(Whatsaaaa.BuildingBlocks.Domain.Results.Unit left, Whatsaaaa.BuildingBlocks.Domain.Results.Unit right) -> bool
+static Whatsaaaa.BuildingBlocks.Domain.Results.Unit.Value.get -> Whatsaaaa.BuildingBlocks.Domain.Results.Unit
+Whatsaaaa.BuildingBlocks.Domain.Results.Error
+Whatsaaaa.BuildingBlocks.Domain.Results.Error.<Clone>$() -> Whatsaaaa.BuildingBlocks.Domain.Results.Error!
+Whatsaaaa.BuildingBlocks.Domain.Results.Error.Code.get -> string!
+Whatsaaaa.BuildingBlocks.Domain.Results.Error.Code.init -> void
+Whatsaaaa.BuildingBlocks.Domain.Results.Error.Deconstruct(out string! Code, out string! Message, out Whatsaaaa.BuildingBlocks.Domain.Results.ErrorKind Kind) -> void
+Whatsaaaa.BuildingBlocks.Domain.Results.Error.Equals(Whatsaaaa.BuildingBlocks.Domain.Results.Error? other) -> bool
+Whatsaaaa.BuildingBlocks.Domain.Results.Error.Error(string! Code, string! Message, Whatsaaaa.BuildingBlocks.Domain.Results.ErrorKind Kind) -> void
+Whatsaaaa.BuildingBlocks.Domain.Results.Error.Fields.get -> System.Collections.Generic.IReadOnlyDictionary<string!, string![]!>?
+Whatsaaaa.BuildingBlocks.Domain.Results.Error.Fields.init -> void
+Whatsaaaa.BuildingBlocks.Domain.Results.Error.Kind.get -> Whatsaaaa.BuildingBlocks.Domain.Results.ErrorKind
+Whatsaaaa.BuildingBlocks.Domain.Results.Error.Kind.init -> void
+Whatsaaaa.BuildingBlocks.Domain.Results.Error.Message.get -> string!
+Whatsaaaa.BuildingBlocks.Domain.Results.Error.Message.init -> void
+Whatsaaaa.BuildingBlocks.Domain.Results.ErrorKind
+Whatsaaaa.BuildingBlocks.Domain.Results.ErrorKind.Conflict = 2 -> Whatsaaaa.BuildingBlocks.Domain.Results.ErrorKind
+Whatsaaaa.BuildingBlocks.Domain.Results.ErrorKind.Forbidden = 3 -> Whatsaaaa.BuildingBlocks.Domain.Results.ErrorKind
+Whatsaaaa.BuildingBlocks.Domain.Results.ErrorKind.NotFound = 1 -> Whatsaaaa.BuildingBlocks.Domain.Results.ErrorKind
+Whatsaaaa.BuildingBlocks.Domain.Results.ErrorKind.Unexpected = 4 -> Whatsaaaa.BuildingBlocks.Domain.Results.ErrorKind
+Whatsaaaa.BuildingBlocks.Domain.Results.ErrorKind.Validation = 0 -> Whatsaaaa.BuildingBlocks.Domain.Results.ErrorKind
+Whatsaaaa.BuildingBlocks.Domain.Results.Result
+Whatsaaaa.BuildingBlocks.Domain.Results.Result.Error.get -> Whatsaaaa.BuildingBlocks.Domain.Results.Error?
+Whatsaaaa.BuildingBlocks.Domain.Results.Result.IsFailure.get -> bool
+Whatsaaaa.BuildingBlocks.Domain.Results.Result.IsSuccess.get -> bool
+Whatsaaaa.BuildingBlocks.Domain.Results.Result.Result(Whatsaaaa.BuildingBlocks.Domain.Results.Error? error) -> void
+Whatsaaaa.BuildingBlocks.Domain.Results.Result<TValue>
+Whatsaaaa.BuildingBlocks.Domain.Results.Result<TValue>.Value.get -> TValue
+Whatsaaaa.BuildingBlocks.Domain.Results.Unit
+Whatsaaaa.BuildingBlocks.Domain.Results.Unit.Equals(Whatsaaaa.BuildingBlocks.Domain.Results.Unit other) -> bool
+Whatsaaaa.BuildingBlocks.Domain.Results.Unit.Unit() -> void
+~override Whatsaaaa.BuildingBlocks.Domain.Results.Unit.Equals(object obj) -> bool
+~override Whatsaaaa.BuildingBlocks.Domain.Results.Unit.ToString() -> string
