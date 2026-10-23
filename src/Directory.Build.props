@@ -1,0 +1,54 @@
+<Project>
+
+  <!-- The repository-wide settings first; this file adds only what a published package needs. -->
+  <Import Project="$([MSBuild]::GetPathOfFileAbove('Directory.Build.props', '$(MSBuildThisFileDirectory)../'))" />
+
+  <!-- Identity and metadata shown on nuget.org. The package ID is the project name. -->
+  <PropertyGroup>
+    <IsPackable>true</IsPackable>
+    <PackageId>$(MSBuildProjectName)</PackageId>
+    <Authors>Whatsaaaa</Authors>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/whatsaaaa/buildingblocks</PackageProjectUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageTags>whatsaaaa;modular-monolith;outbox;audit;efcore;postgresql</PackageTags>
+    <PackageReleaseNotes>https://github.com/whatsaaaa/building-blocks/blob/main/CHANGELOG.md</PackageReleaseNotes>
+  </PropertyGroup>
+
+  <!-- Debugging into the packages: symbol packages and Source Link to the exact commit. -->
+  <PropertyGroup>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <ContinuousIntegrationBuild Condition="'$(GITHUB_ACTIONS)' == 'true'">true</ContinuousIntegrationBuild>
+  </PropertyGroup>
+
+  <!-- Every public member is documented: a missing comment is CS1591, which warnings-as-errors turns into a failure. -->
+  <PropertyGroup>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <!-- Versions come from tags such as v0.1.0; untagged commits build as 0.1.1-alpha.0.<height>. -->
+  <PropertyGroup>
+    <MinVerTagPrefix>v</MinVerTagPrefix>
+    <MinVerDefaultPreReleaseIdentifiers>alpha.0</MinVerDefaultPreReleaseIdentifiers>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)../README.md" Pack="true" PackagePath="/" Visible="false" />
+  </ItemGroup>
+
+  <!-- The public surface of every library is tracked. The generator is not a library: its one public type runs inside the compiler. -->
+  <ItemGroup Condition="'$(IsRoslynComponent)' != 'true'">
+    <PackageReference Include="Microsoft.CodeAnalysis.PublicApiAnalyzers" PrivateAssets="all" />
+    <AdditionalFiles Include="PublicAPI.Shipped.txt" />
+    <AdditionalFiles Include="PublicAPI.Unshipped.txt" />
+  </ItemGroup>
+
+  <!-- Internals are visible to this repository's unit tests only, never to product code. -->
+  <ItemGroup>
+    <InternalsVisibleTo Include="Whatsaaaa.BuildingBlocks.UnitTests" />
+  </ItemGroup>
+
+</Project>

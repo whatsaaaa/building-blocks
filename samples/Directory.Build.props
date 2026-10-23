@@ -1,0 +1,6 @@
+<Project>
+
+  <!-- Samples are built and tested like product code, and never packed or published. -->
+  <Import Project="$([MSBuild]::GetPathOfFileAbove('Directory.Build.props', '$(MSBuildThisFileDirectory)../'))" />
+
+</Project>
