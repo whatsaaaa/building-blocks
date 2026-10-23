@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    Domain primitives every Whatsaaaa product builds on: results, entities, domain events, typed IDs.
+    By design this project has no project or package references; settings come from Directory.Build.props.
+  -->
+  <PropertyGroup>
+    <Description>Results, errors, entities, aggregate roots, domain events and prefixed typed IDs for Whatsaaaa products.</Description>
+  </PropertyGroup>
+</Project>
