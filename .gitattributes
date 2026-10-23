@@ -1,0 +1,13 @@
+# Store text with LF in the repository; Git converts on checkout only where needed.
+* text=auto eol=lf
+
+# Windows-only scripts keep CRLF.
+*.cmd text eol=crlf
+*.bat text eol=crlf
+
+# Shell scripts must stay LF so they run on Linux runners.
+.sh text eol=lf
+
+# Binary files are never diffed or normalised.
+*.png binary
+*.snk binary
