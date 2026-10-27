@@ -42,8 +42,6 @@
   <!-- The public surface of every library is tracked. The generator is not a library: its one public type runs inside the compiler. -->
   <ItemGroup Condition="'$(IsRoslynComponent)' != 'true'">
     <PackageReference Include="Microsoft.CodeAnalysis.PublicApiAnalyzers" PrivateAssets="all" />
-    <AdditionalFiles Include="PublicAPI.Shipped.txt" />
-    <AdditionalFiles Include="PublicAPI.Unshipped.txt" />
   </ItemGroup>
 
   <!-- Internals are visible to this repository's unit tests only, never to product code. -->

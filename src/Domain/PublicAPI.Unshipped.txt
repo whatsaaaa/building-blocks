@@ -1,8 +1,14 @@
 #nullable enable
+abstract Whatsaaaa.BuildingBlocks.Domain.Events.DomainEvent.<Clone>$() -> Whatsaaaa.BuildingBlocks.Domain.Events.DomainEvent!
+override Whatsaaaa.BuildingBlocks.Domain.Events.DomainEvent.Equals(object? obj) -> bool
+override Whatsaaaa.BuildingBlocks.Domain.Events.DomainEvent.GetHashCode() -> int
+override Whatsaaaa.BuildingBlocks.Domain.Events.DomainEvent.ToString() -> string!
 override Whatsaaaa.BuildingBlocks.Domain.Results.Error.Equals(object? obj) -> bool
 override Whatsaaaa.BuildingBlocks.Domain.Results.Error.GetHashCode() -> int
 override Whatsaaaa.BuildingBlocks.Domain.Results.Error.ToString() -> string!
 override Whatsaaaa.BuildingBlocks.Domain.Results.Unit.GetHashCode() -> int
+static Whatsaaaa.BuildingBlocks.Domain.Events.DomainEvent.operator !=(Whatsaaaa.BuildingBlocks.Domain.Events.DomainEvent? left, Whatsaaaa.BuildingBlocks.Domain.Events.DomainEvent? right) -> bool
+static Whatsaaaa.BuildingBlocks.Domain.Events.DomainEvent.operator ==(Whatsaaaa.BuildingBlocks.Domain.Events.DomainEvent? left, Whatsaaaa.BuildingBlocks.Domain.Events.DomainEvent? right) -> bool
 static Whatsaaaa.BuildingBlocks.Domain.Results.Error.Conflict(string! code, string! message) -> Whatsaaaa.BuildingBlocks.Domain.Results.Error!
 static Whatsaaaa.BuildingBlocks.Domain.Results.Error.Forbidden(string! code, string! message) -> Whatsaaaa.BuildingBlocks.Domain.Results.Error!
 static Whatsaaaa.BuildingBlocks.Domain.Results.Error.NotFound(string! code, string! message) -> Whatsaaaa.BuildingBlocks.Domain.Results.Error!
@@ -20,6 +26,27 @@ static Whatsaaaa.BuildingBlocks.Domain.Results.Result<TValue>.implicit operator 
 static Whatsaaaa.BuildingBlocks.Domain.Results.Unit.operator !=(Whatsaaaa.BuildingBlocks.Domain.Results.Unit left, Whatsaaaa.BuildingBlocks.Domain.Results.Unit right) -> bool
 static Whatsaaaa.BuildingBlocks.Domain.Results.Unit.operator ==(Whatsaaaa.BuildingBlocks.Domain.Results.Unit left, Whatsaaaa.BuildingBlocks.Domain.Results.Unit right) -> bool
 static Whatsaaaa.BuildingBlocks.Domain.Results.Unit.Value.get -> Whatsaaaa.BuildingBlocks.Domain.Results.Unit
+virtual Whatsaaaa.BuildingBlocks.Domain.Events.DomainEvent.EqualityContract.get -> System.Type!
+virtual Whatsaaaa.BuildingBlocks.Domain.Events.DomainEvent.Equals(Whatsaaaa.BuildingBlocks.Domain.Events.DomainEvent? other) -> bool
+virtual Whatsaaaa.BuildingBlocks.Domain.Events.DomainEvent.PrintMembers(System.Text.StringBuilder! builder) -> bool
+Whatsaaaa.BuildingBlocks.Domain.Entities.AggregateRoot<TId>
+Whatsaaaa.BuildingBlocks.Domain.Entities.AggregateRoot<TId>.AggregateRoot() -> void
+Whatsaaaa.BuildingBlocks.Domain.Entities.Entity
+Whatsaaaa.BuildingBlocks.Domain.Entities.Entity.ClearDomainEvents() -> void
+Whatsaaaa.BuildingBlocks.Domain.Entities.Entity.Entity() -> void
+Whatsaaaa.BuildingBlocks.Domain.Entities.Entity.GetDomainEvents() -> System.Collections.Generic.IReadOnlyList<Whatsaaaa.BuildingBlocks.Domain.Events.IDomainEvent!>!
+Whatsaaaa.BuildingBlocks.Domain.Entities.Entity.Raise(Whatsaaaa.BuildingBlocks.Domain.Events.IDomainEvent! domainEvent) -> void
+Whatsaaaa.BuildingBlocks.Domain.Entities.Entity<TId>
+Whatsaaaa.BuildingBlocks.Domain.Entities.Entity<TId>.Entity() -> void
+Whatsaaaa.BuildingBlocks.Domain.Entities.Entity<TId>.Id.get -> TId
+Whatsaaaa.BuildingBlocks.Domain.Entities.Entity<TId>.Id.init -> void
+Whatsaaaa.BuildingBlocks.Domain.Events.DomainEvent
+Whatsaaaa.BuildingBlocks.Domain.Events.DomainEvent.DomainEvent() -> void
+Whatsaaaa.BuildingBlocks.Domain.Events.DomainEvent.DomainEvent(Whatsaaaa.BuildingBlocks.Domain.Events.DomainEvent! original) -> void
+Whatsaaaa.BuildingBlocks.Domain.Events.DomainEvent.OccurredAt.get -> System.DateTimeOffset
+Whatsaaaa.BuildingBlocks.Domain.Events.DomainEvent.OccurredAt.init -> void
+Whatsaaaa.BuildingBlocks.Domain.Events.IDomainEvent
+Whatsaaaa.BuildingBlocks.Domain.Events.IDomainEvent.OccurredAt.get -> System.DateTimeOffset
 Whatsaaaa.BuildingBlocks.Domain.Results.Error
 Whatsaaaa.BuildingBlocks.Domain.Results.Error.<Clone>$() -> Whatsaaaa.BuildingBlocks.Domain.Results.Error!
 Whatsaaaa.BuildingBlocks.Domain.Results.Error.Code.get -> string!
