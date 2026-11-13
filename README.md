@@ -1,6 +1,4 @@
-<p align="center">
-  <img src=".github/assets/readme-header.svg" alt="building-blocks - the foundation of Whatsaaaa .NET products" width="100%">
-</p>
+![building-blocks - the foundation of Whatsaaaa .NET products](https://raw.githubusercontent.com/whatsaaaa/building-blocks/main/.github/assets/readme-header.svg)
 
 # Whatsaaaa's BuildingBlocks
 
