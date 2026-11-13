@@ -9,7 +9,7 @@
     <PackageId>$(MSBuildProjectName)</PackageId>
     <Authors>Whatsaaaa</Authors>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageProjectUrl>https://github.com/whatsaaaa/buildingblocks</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/whatsaaaa/building-blocks</PackageProjectUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageTags>whatsaaaa;modular-monolith;outbox;audit;efcore;postgresql</PackageTags>
     <PackageReleaseNotes>https://github.com/whatsaaaa/building-blocks/blob/main/CHANGELOG.md</PackageReleaseNotes>
