@@ -53,7 +53,7 @@
 
   <!-- Tests: xUnit v3 and a PostgreSQL container. -->
   <ItemGroup>
-    <PackageVersion Include="xunit.v3" Version="4.0.2" />
+    <PackageVersion Include="xunit.v3" Version="4.0.3" />
     <PackageVersion Include="Testcontainers.PostgreSql" Version="4.13.0" />
   </ItemGroup>
 </Project>
