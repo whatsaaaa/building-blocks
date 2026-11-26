@@ -32,7 +32,7 @@
   <ItemGroup>
     <PackageVersion Include="Microsoft.EntityFrameworkCore.Relational" Version="11.0.0" />
     <PackageVersion Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="10.0.3" />
-    <PackageVersion Include="EFCore.NamingConventions" Version="10.0.1" />
+    <PackageVersion Include="EFCore.NamingConventions" Version="11.0.0" />
   </ItemGroup>
 
   <!-- Host telemetry (Observability only). -->
